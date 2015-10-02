@@ -5,9 +5,21 @@ XML request body parser for koa
 
 ## Usage
 
-``bash
-npm install --save koa-xml
-``
+``npm install --save koa-xml``
+
+```
+const koa   = require('koa')
+  , xml     = require('koa-xml')
+
+const options = {
+    normalize: true
+  , firstCharLowerCase: true
+  , explicitArray: false
+  , ignoreAttrs: true
+}
+
+app.use(xml(options))
+```
 
 ## Xml parse options
 Uses [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js) see all available [options] (https://github.com/Leonidas-from-XIV/node-xml2js#options)

@@ -1,4 +1,5 @@
 ## koa-xml
+[![Build Status](https://travis-ci.org/rafaeljesus/koa-xml.svg?branch=master)](https://travis-ci.org/rafaeljesus/koa-xml)
 
 XML request body parser for koa
 

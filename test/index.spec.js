@@ -12,18 +12,20 @@ describe('IndexSpec', () => {
 
   let options = {}
 
-  describe.skip('.skip', () => {
+  describe('.skip', () => {
 
     const koa = {is: () => false}
+    const next = function* () {}
 
     it('should skip if content type is not xml', function* () {
-      yield koaXml.call(koa, options)
+      const fn = koaXml(options)
+      yield fn.call(koa, next)
       expect(koa.request).to.not.exist
     })
 
   })
 
-  describe('.PATCH', () => {
+  describe.skip('.PATCH', () => {
     it('should parse to json', () => {
     })
   })

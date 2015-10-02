@@ -2,10 +2,9 @@
 
 const parse = require('./lib/xml')
 
-const fn = function() {
-  let ctx = this
-
-  return function* (next, options) {
+const fn = function(options) {
+  return function* (next) {
+    let ctx = this
     if (ctx.is('xml')) {
       switch (ctx.method) {
         case 'PATCH':

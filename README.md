@@ -13,7 +13,7 @@ XML request body parser for koa
 npm install --save koa-xml
 ```
 
-```js[![NPM version]
+```js
 const koa   = require('koa')
   , xml     = require('koa-xml')
 

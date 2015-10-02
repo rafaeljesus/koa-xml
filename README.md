@@ -1,13 +1,19 @@
 ## koa-xml
+[![Node version](https://img.shields.io/node/v/latest-version.svg)](https://npmjs.org/package/koa-xml)
+[![NPM version](http://img.shields.io/npm/v/koa-xml.svg)](https://www.npmjs.org/package/koa-xml)
 [![Build Status](https://travis-ci.org/rafaeljesus/koa-xml.svg?branch=master)](https://travis-ci.org/rafaeljesus/koa-xml)
+[![license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/rafaeljesus/koa-xml/blob/master/LICENSE)
+
 
 XML request body parser for koa
 
 ## Usage
 
-``npm install --save koa-xml``
-
+```bash
+npm install --save koa-xml
 ```
+
+```js[![NPM version]
 const koa   = require('koa')
   , xml     = require('koa-xml')
 

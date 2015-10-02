@@ -1,0 +1,23 @@
+{
+  "name": "koa-xml",
+  "version": "1.0.0",
+  "description": "XML request body parser for Koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafaeljesus/koa-xml.git"
+  },
+  "keywords": [
+    "koa",
+    "koajs",
+    "xml",
+    "body",
+    "parser",
+    "request"
+  ],
+  "author": "Rafael Jesus <rafaelljesus86@gmail.com>",
+  "license": "MIT"
+}

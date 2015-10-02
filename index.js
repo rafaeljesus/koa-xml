@@ -7,9 +7,9 @@ const fn = function(options) {
     let ctx = this
     if (ctx.is('xml')) {
       switch (ctx.method) {
-        case 'PATCH':
         case 'POST':
         case 'PUT':
+        case 'PATCH':
         case 'TRACE':
         ctx.request.body = yield parse(ctx.req, options)
         break

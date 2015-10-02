@@ -10,23 +10,50 @@ coMocha(mocha)
 
 describe('IndexSpec', () => {
 
-  let options = {}
+  const options = {}
+  const methods = ['POST', 'PUT', 'PATCH', 'TRACE']
+  const next = function* () {}
 
   describe('.skip', () => {
 
-    const koa = {is: () => false}
-    const next = function* () {}
-
     it('should skip if content type is not xml', function* () {
+      const koa = {is: () => false, request: {}}
       const fn = koaXml(options)
       yield fn.call(koa, next)
-      expect(koa.request).to.not.exist
+      expect(koa.request.body).to.not.exist
+    })
+
+    it('should skip if method is GET', function* () {
+      const koa = {is: () => true, request: {}, method: 'GET'}
+      const fn = koaXml(options)
+      yield fn.call(koa, next)
+      expect(koa.request.body).to.not.exist
+    })
+
+    it('should skip if method is DELETE', function* () {
+      const koa = {is: () => true, request: {}, method: 'DELETE'}
+      const fn = koaXml(options)
+      yield fn.call(koa, next)
+      expect(koa.request.body).to.not.exist
     })
 
   })
 
-  describe.skip('.PATCH', () => {
-    it('should parse to json', () => {
+  methods.map(m => {
+
+    describe.skip('.' + m, () => {
+
+      const koa = {
+          is: () => true
+        , request: {}
+        , method: 'POST'
+      }
+
+      it('should parse xml to json', function* () {
+        const fn = koaXml(options)
+        yield fn.call(koa, next)
+        expect(koa.request.body).to.not.exist
+      })
     })
   })
 

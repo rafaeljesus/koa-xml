@@ -4,7 +4,11 @@
   "description": "XML request body parser for Koa",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test npm run lint && npm run coverage",
+    "lint": "eslint .",
+    "posttest": "istanbul check-coverage --statements 90 --branches 90 --functions 90 --lines 90",
+    "coverage": "istanbul cover --print both ./node_modules/mocha/bin/_mocha -- test --recursive",
+    "codeclimate": "CODECLIMATE_REPO_TOKEN=62f3446f41f82a37319391e9c9921cd8f1398a6c631799bd2a781fdb84408638 codeclimate-test-reporter < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -19,5 +23,16 @@
     "request"
   ],
   "author": "Rafael Jesus <rafaelljesus86@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "xml2js": "^0.4.12"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "co-mocha": "^1.1.2",
+    "codeclimate-test-reporter": "^0.1.1",
+    "eslint": "^1.5.1",
+    "istanbul": "^0.3.21",
+    "mocha": "^2.3.3"
+  }
 }

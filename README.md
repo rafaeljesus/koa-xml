@@ -1,8 +1,9 @@
 ## koa-xml
-[![Node version](https://img.shields.io/node/v/latest-version.svg)](https://npmjs.org/package/koa-xml)
-[![NPM version](http://img.shields.io/npm/v/koa-xml.svg)](https://www.npmjs.org/package/koa-xml)
-[![Build Status](https://travis-ci.org/rafaeljesus/koa-xml.svg?branch=master)](https://travis-ci.org/rafaeljesus/koa-xml)
-[![license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/rafaeljesus/koa-xml/blob/master/LICENSE)
+[![Node version](https://img.shields.io/node/v/latest-version.svg?style=flat-square)](https://npmjs.org/package/koa-xml)
+[![NPM version](http://img.shields.io/npm/v/koa-xml.svg?style=flat-square)](https://www.npmjs.org/package/koa-xml)
+[![Build Status](https://img.shields.io/travis/rafaeljesus/koa-xml/master.svg?style=flat-square
+)](https://travis-ci.org/rafaeljesus/koa-xml)
+[![license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/rafaeljesus/koa-xml/blob/master/LICENSE)
 
 
 XML request body parser for koa

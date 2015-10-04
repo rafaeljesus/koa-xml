@@ -67,4 +67,26 @@ describe('IndexSpec', () => {
     })
   })
 
+  describe('.PUT', () => {
+
+    it('should parse xml to json', done => {
+      const app = koa()
+
+      app.use(koaXml())
+      app.use(function* () {
+        expect(this.request.body).to.be.eql({name: 'foo'})
+        this.status = 200
+      })
+
+      const server = app.listen()
+        , xml = '<name>foo</name>'
+
+      request(server).
+        put('/').
+        type('xml').
+        send(xml).
+        expect(200, done)
+    })
+  })
+
 })

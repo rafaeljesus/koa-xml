@@ -1,6 +1,6 @@
 {
   "name": "koa-xml",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "XML request body parser for Koa",
   "main": "index.js",
   "scripts": {

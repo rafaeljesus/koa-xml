@@ -12,12 +12,11 @@ coMocha(mocha)
 
 describe('IndexSpec', () => {
 
-  const options = {}
-  const next = function* () {}
+  describe('.mock', () => {
 
-  describe('.skip', () => {
-
-    let koa = Object.create(null)
+    let options = {}
+      , next = function* () {}
+      , koa = Object.create(null)
 
     beforeEach(() => {
       koa = {is: () => false, request: {}}
@@ -29,25 +28,30 @@ describe('IndexSpec', () => {
       expect(koa.request.body).to.not.exist
     })
 
-    it('should skip if method is GET', function* () {
-      koa.method = 'GET'
-      const fn = koaXml(options)
-      yield fn.call(koa, next)
-      expect(koa.request.body).to.not.exist
+    describe('.GET', () => {
+      it('should skip unsuported method', function* () {
+        koa.method = 'GET'
+        const fn = koaXml(options)
+        yield fn.call(koa, next)
+        expect(koa.request.body).to.not.exist
+      })
     })
 
-    it('should skip if method is DELETE', function* () {
-      koa.method = 'DELETE'
-      const fn = koaXml(options)
-      yield fn.call(koa, next)
-      expect(koa.request.body).to.not.exist
+    describe('.DELETE', () => {
+      it('should skip unsuported method', function* () {
+        koa.method = 'DELETE'
+        const fn = koaXml(options)
+        yield fn.call(koa, next)
+        expect(koa.request.body).to.not.exist
+      })
     })
-
   })
 
-  describe('.POST', () => {
+  describe('.integration', () => {
 
-    it('should parse xml to json', done => {
+    let server, xml
+
+    beforeEach(() => {
       const app = koa()
 
       app.use(koaXml())
@@ -56,36 +60,48 @@ describe('IndexSpec', () => {
         this.status = 200
       })
 
-      const server = app.listen()
-        , xml = '<name>foo</name>'
-
-      request(server).
-        post('/').
-        type('xml').
-        send(xml).
-        expect(200, done)
+      server = app.listen()
+      xml = '<name>foo</name>'
     })
-  })
 
-  describe('.PUT', () => {
-
-    it('should parse xml to json', done => {
-      const app = koa()
-
-      app.use(koaXml())
-      app.use(function* () {
-        expect(this.request.body).to.be.eql({name: 'foo'})
-        this.status = 200
+    describe('.POST', () => {
+      it('should parse xml to json', done => {
+        request(server).
+          post('/').
+          type('xml').
+          send(xml).
+          expect(200, done)
       })
+    })
 
-      const server = app.listen()
-        , xml = '<name>foo</name>'
+    describe('.PUT', () => {
+      it('should parse xml to json', done => {
+        request(server).
+          put('/').
+          type('xml').
+          send(xml).
+          expect(200, done)
+      })
+    })
 
-      request(server).
-        put('/').
-        type('xml').
-        send(xml).
-        expect(200, done)
+    describe('.PATCH', () => {
+      it('should parse xml to json', done => {
+        request(server).
+          patch('/').
+          type('xml').
+          send(xml).
+          expect(200, done)
+      })
+    })
+
+    describe('.TRACE', () => {
+      it('should parse xml to json', done => {
+        request(server).
+          trace('/').
+          type('xml').
+          send(xml).
+          expect(200, done)
+      })
     })
   })
 

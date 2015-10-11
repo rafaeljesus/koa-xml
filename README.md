@@ -2,8 +2,8 @@
 [![Node version](https://img.shields.io/node/v/latest-version.svg?style=flat-square)](https://npmjs.org/package/koa-xml)
 [![NPM version](http://img.shields.io/npm/v/koa-xml.svg?style=flat-square)](https://www.npmjs.org/package/koa-xml)
 [![Build Status](https://img.shields.io/travis/rafaeljesus/koa-xml/master.svg?style=flat-square)](https://travis-ci.org/rafaeljesus/koa-xml)
-[![Code Climate](https://img.shields.io/codeclimate/github/rafaeljesus/koa-xml.svg?style=flat-square)](https://codeclimate.com/github/rafaeljesus/koa-xml)
-[![Test Coverage](https://img.shields.io/codeclimate/coverage/github/rafaeljesus/koa-xml.svg?style=flat-square)](https://codeclimate.com/github/rafaeljesus/koa-xml/coverage)
+[![bitHound Score](https://www.bithound.io/github/rafaeljesus/koa-xml/badges/score.svg)](https://www.bithound.io/github/rafaeljesus/koa-xml)
+[![bitHound Dependencies](https://www.bithound.io/github/rafaeljesus/koa-xml/badges/dependencies.svg)](https://www.bithound.io/github/rafaeljesus/koa-xml/master/dependencies/npm)
 [![license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/rafaeljesus/koa-xml/blob/master/LICENSE)
 
 

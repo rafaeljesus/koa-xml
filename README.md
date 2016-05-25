@@ -6,7 +6,6 @@
 [![bitHound Dependencies](https://www.bithound.io/github/rafaeljesus/koa-xml/badges/dependencies.svg)](https://www.bithound.io/github/rafaeljesus/koa-xml/master/dependencies/npm)
 [![license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/rafaeljesus/koa-xml/blob/master/LICENSE)
 
-
 XML request body parser for koa
 
 ## Usage
@@ -16,14 +15,14 @@ npm install --save koa-xml
 ```
 
 ```js
-const koa   = require('koa')
-  , xml     = require('koa-xml')
+const koa = require('koa')
+const xml = require('koa-xml')
 
 const options = {
-    normalize: true
-  , firstCharLowerCase: true
-  , explicitArray: false
-  , ignoreAttrs: true
+  normalize: true,
+  firstCharLowerCase: true,
+  explicitArray: false,
+  ignoreAttrs: true
 }
 
 app.use(xml(options))
@@ -32,7 +31,7 @@ app.use(xml(options))
 ## Xml parse options
 Uses [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js) see all available [options] (https://github.com/Leonidas-from-XIV/node-xml2js#options)
 
-Supported methods: `POST`, `PUT`, `PUT`, `PATCH`, and `TRACE`.
+Supported methods: `POST`, `PUT`, `PATCH`, and `TRACE`.
 
 Supported `Content-Type`: `application/xml`
 

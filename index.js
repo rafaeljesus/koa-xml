@@ -2,9 +2,9 @@
 
 const parse = require('./lib/xml')
 
-const fn = function(options) {
-  return function* (next) {
-    let ctx = this
+module.exports = (options) => {
+  return function * (next) {
+    const ctx = this
     if (ctx.is('xml')) {
       switch (ctx.method) {
         case 'POST':
@@ -15,9 +15,6 @@ const fn = function(options) {
         break
       }
     }
-
     yield next
   }
 }
-
-module.exports = fn
